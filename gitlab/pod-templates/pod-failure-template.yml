@@ -4,9 +4,14 @@ variables:
   app_label: 'app=mysql'
   mode: pod-delete
 
-pod-failure-job:
+#pod-failure-job:
+#  image: ksatchit/ansible-runner:gitlab
+#  script:
+#    - /experiments/chaos/simple_pod_failure/simple_pod_failure.bash --mode $mode --namespace $app_ns --label $app_label 
+
+.pod_failure_template:
   image: ksatchit/ansible-runner:gitlab
   script:
-    - /experiments/chaos/simple_pod_failure/simple_pod_failure.bash --mode $mode --namespace $app_ns --label $app_label 
+    - /experiments/chaos/simple_pod_failure/simple_pod_failure.bash --mode $mode --namespace $app_ns --label $app_label
   
   
