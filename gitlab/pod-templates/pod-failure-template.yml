@@ -10,7 +10,7 @@ variables:
 #    - /experiments/chaos/simple_pod_failure/simple_pod_failure.bash --mode $mode --namespace $app_ns --label $app_label 
 
 .pod_failure_template:
-  image: ksatchit/ansible-runner:gitlabremote
+  image: ksatchit/ansible-runner:gitlabgcloud
   script:
     - /experiments/chaos/simple_pod_failure/simple_pod_failure.bash --mode $mode --namespace $app_ns --label $app_label
   
