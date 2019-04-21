@@ -102,7 +102,7 @@ test_name=$(${utils_path}/generate_test_name testcase=simple-pod-failure metadat
 #############################
 
 kubectl set env -f run_litmus_test.yml APP_NAMESPACE=${app_ns} APP_LABEL=${app_label} \
-CHAOS_TYPE=${chaos_type} TARGET_CONTAINER=${app_container} RUN_ID=${id} --dry-run -o yaml > ready_litmus_test.yml
+CHAOS_TYPE=${chaos_type} TARGET_CONTAINER=${app_container} RUN_ID=${run_id} --dry-run -o yaml > ready_litmus_test.yml
 
 #################
 ##  RUN TEST   ##
