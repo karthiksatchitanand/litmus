@@ -1,0 +1,12 @@
+---
+variables:
+  app_ns: percona
+  app_label: 'app=mysql'
+  mode: pod-delete
+
+pod-failure-job:
+  image: ksatchit/ansible-runner:gitlab
+  script:
+    - ./simple_pod_failure.bash --mode $mode --namespace $app_ns --label $app_label 
+  
+  
