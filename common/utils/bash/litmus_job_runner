@@ -1,6 +1,8 @@
 #!/bin/bash
 set -x
 
+utils_path="/common/utils/bash"
+
 litmus_job_label_key=$(echo $1 | cut -d "=" -f 2 | cut -d ":" -f 1)
 litmus_job_label_value=$(echo $1 | cut -d "=" -f 2 | cut -d ":" -f 2)
 litmus_job_file=$(echo $2 | cut -d "=" -f 2)
