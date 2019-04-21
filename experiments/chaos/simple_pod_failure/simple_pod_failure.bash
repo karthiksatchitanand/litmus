@@ -89,6 +89,7 @@ done
 ########################
 
 utils_path="/common/utils/bash"
+experiment_path="/experiments/chaos/simple_pod_failure"
 
 #########################
 ## GENERATE TESTNAME   ##
@@ -101,7 +102,7 @@ test_name=$(${utils_path}/generate_test_name testcase=simple-pod-failure metadat
 ## PRECONDITION LITMUS JOB ##
 #############################
 
-kubectl set env -f run_litmus_test.yml APP_NAMESPACE=${app_ns} APP_LABEL=${app_label} \
+kubectl set env -f ${experiment_path}/run_litmus_test.yml APP_NAMESPACE=${app_ns} APP_LABEL=${app_label} \
 CHAOS_TYPE=${chaos_type} TARGET_CONTAINER=${app_container} RUN_ID=${run_id} --dry-run -o yaml > ready_litmus_test.yml
 
 #################
