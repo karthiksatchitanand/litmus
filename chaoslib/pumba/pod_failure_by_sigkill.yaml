@@ -1,8 +1,7 @@
-- block:
     - name: Setup pumba chaos infrastructure
       shell: >
         kubectl apply -f /chaoslib/pumba/pumba_kube.yaml
-        -n {{ namespace }}
+        -n {{ app_ns }}
       args:
         executable: /bin/bash
       register: result
@@ -12,7 +11,7 @@
       shell: >
         kubectl get pod -l app=pumba
         --no-headers -o custom-columns=:status.phase
-        -n {{ namespace }} | sort | uniq
+        -n {{ app_ns }} | sort | uniq
       args:
         executable: /bin/bash
       register: result
@@ -21,9 +20,19 @@
       retries: 30
       ignore_errors: true
 
+    ## Get app pod name
+    - name: Select the app pod 
+      shell: >
+        kubectl get pod -l {{ app_label }} -n {{ app_ns }} -o=custom-columns=NAME:".metadata.name" --no-headers
+        | shuf | head -1
+      args:
+        executable: /bin/bash
+      register: app_pod
+
+    ## TODO: Convert to handling via app labels 
     - name: Identify the application node
       shell: >
-        kubectl get pod {{ app_pod }} -n {{ namespace }}
+        kubectl get pod {{app_pod.stdout}} -n {{ app_ns }}
         --no-headers -o custom-columns=:spec.nodeName
       args:
         executable: /bin/bash
@@ -37,7 +46,7 @@
 
       - name: Record the application container
         shell: >
-          kubectl get pods -l {{ label }} -n {{ namespace }} -o jsonpath='{.items[0].spec.containers[0].name}'
+          kubectl get pod {{ app_pod.stdout }} -n {{ app_ns }} -o jsonpath='{.items[0].spec.containers[0].name}'
         args:
           executable: /bin/bash
         register: container
@@ -51,7 +60,7 @@
     - name: Record the pumba pod on app node
       shell: >
         kubectl get pod -l app=pumba -o wide
-        -n {{ namespace }} | grep {{ app_node }}
+        -n {{ app_ns }} | grep {{ app_node }}
         | awk '{print $1}'
       args:
         executable: /bin/bash
@@ -59,7 +68,7 @@
 
     - name: Record restartCount
       shell: >
-        kubectl get pod {{ app_pod }} -n {{ namespace }}
+        kubectl get pod {{ app_pod.stdout }} -n {{ app_ns }}
         -o=jsonpath='{.status.containerStatuses[?(@.name=="{{ app_container }}")].restartCount}'
       args:
         executable: /bin/bash
@@ -67,7 +76,7 @@
 
     - name: Force kill the application pod using pumba
       shell: >
-        kubectl exec {{ pumba_pod.stdout}} -n {{ namespace }}
+        kubectl exec {{ pumba_pod.stdout}} -n {{ app_ns }}
         -- pumba kill --signal SIGKILL re2:k8s_{{ app_container }}_;
       args:
         executable: /bin/bash
@@ -76,7 +85,7 @@
 
     - name: Verify restartCount
       shell: >
-        kubectl get pod {{ app_pod }} -n {{ namespace }}
+        kubectl get pod {{ app_pod.stdout }} -n {{ app_ns }}
         -o=jsonpath='{.status.containerStatuses[?(@.name=="{{ app_container }}")].restartCount}'
       args:
         executable: /bin/bash
@@ -85,12 +94,9 @@
       delay: 2
       retries: 30
 
-  when: action == "killapp"
-
-- block:
     - name: Delete the pumba daemonset
       shell: >
-        kubectl delete -f /chaoslib/pumba/pumba_kube.yaml -n {{ namespace }}
+        kubectl delete -f /chaoslib/pumba/pumba_kube.yaml -n {{ app_ns }}
       args:
         executable: /bin/bash
       register: result
@@ -98,7 +104,7 @@
     - name: Confirm that the pumba ds is deleted successfully
       shell: >
         kubectl get pod -l app=pumba
-        --no-headers -n {{ namespace }}
+        --no-headers -n {{ app_ns }}
       args:
         executable: /bin/bash
       register: result
@@ -106,4 +112,3 @@
       delay: 2
       retries: 150
 
-  when: action == "deletepumba"

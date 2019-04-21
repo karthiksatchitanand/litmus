@@ -1,0 +1,7 @@
+test_name: simple-pod-failure
+namespace: "{{ lookup('env','APP_NAMESPACE') }}"
+label: "{{ lookup('env','APP_LABEL') }}"
+liveness_label: "{{ lookup('env','LIVENESS_APP_LABEL') }}"
+liveness_namespace: "{{ lookup('env','LIVENESS_APP_NAMESPACE') }}"
+chaos_type: "{{ lookup('env','CHAOS_TYPE') }}"
+target_container: "{{ lookup('env','TARGET_CONTAINER') }}"

@@ -1,5 +1,7 @@
 - name: Get the application pod name 
-  shell: kubectl get pod -l {{ label }} -n {{ namespace }} -o=custom-columns=NAME:".metadata.name" --no-headers
+  shell: >
+    kubectl get pod -l {{ app_label }} -n {{ app_ns }} -o=custom-columns=NAME:".metadata.name" --no-headers
+    | shuf | head -1
   args:
     executable: /bin/bash
   register: app_pod

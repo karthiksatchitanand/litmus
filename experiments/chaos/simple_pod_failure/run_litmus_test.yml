@@ -1,0 +1,45 @@
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  generateName: simple-pod-failure-
+  namespace: litmus
+spec:
+  template:
+    metadata:
+      labels:
+        name: simple-pod-failure
+    spec:
+      serviceAccountName: litmus
+      restartPolicy: Never
+      containers:
+      - name: ansibletest
+        image: ksatchit/ansible-runner:gitlab
+        imagePullPolicy: Always
+        env:
+          - name: ANSIBLE_STDOUT_CALLBACK
+            value: default
+
+          - name: APP_NAMESPACE
+            value: default 
+
+          - name: APP_LABEL
+            value: 'app=nginx'
+
+          - name: LIVENESS_APP_LABEL
+            value: ""
+
+          - name: LIVENESS_APP_NAMESPACE
+            value: ""
+
+            # CHOS_TYPE (pod-kill , pod-delete)
+          - name: CHAOS_TYPE
+            value: "pod-delete"
+            
+            # TARGET_CONTAINER  
+          - name: TARGET_CONTAINER
+            value: "nginx"
+
+        command: ["/bin/bash"]
+        args: ["-c", "ansible-playbook ./experiment/simple_pod_failure/test.yml -i /etc/ansible/hosts -vv; exit 0"]
+

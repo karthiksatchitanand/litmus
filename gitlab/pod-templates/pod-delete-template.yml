@@ -1,0 +1,9 @@
+---
+variables:
+  app_ns: default
+  app_label: 'app=mysql'
+
+pod-delete-job:
+  image: litmus-runner:demo
+  
+  
