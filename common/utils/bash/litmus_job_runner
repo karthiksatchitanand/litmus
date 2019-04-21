@@ -7,15 +7,15 @@ litmus_job_file=$(echo $2 | cut -d "=" -f 2)
 
 echo "Running the litmus test.."
 
-jobNameCmd="kubectl get jobs -n litmus --no-headers -o jsonpath='{.items[?(@.metadata.labels.${litmus_job_label_key}==\"${litmus_job_label_value}\")].metadata.name}'"
+jobNameCmd="kubectl get jobs -n litmus --no-headers -o jsonpath='{.items[?(@.metadata.labels.${litmus_job_label_key}==\"${litmus_job_label_value}\")].metadata.name}' --kubeconfig=/root/.kube/config" ## kubeconfig is a demo hack, will be removed
 
-job_deploy_out=$(kubectl create -f ${litmus_job_file}) && \
+job_deploy_out=$(kubectl create -f ${litmus_job_file} --kubeconfig=/root/.kube/config) && \
 job_name=$(eval ${jobNameCmd}); retcode=$?
 ${utils_path}/error_handler ${retcode} msg="Unable to run litmusbook, exiting" action="exit"
 
 ## Obtain the litmus pod name 
 
-litmusPodCmd="kubectl get pod --no-headers -n litmus -o jsonpath='{.items[?(@.metadata.labels.job-name==\"${job_name}\")].metadata.name}'"
+litmusPodCmd="kubectl get pod --no-headers -n litmus -o jsonpath='{.items[?(@.metadata.labels.job-name==\"${job_name}\")].metadata.name}' --kubeconfig=/root/.kube/config"
 litmus_pod=$(eval ${litmusPodCmd}); retcode=$?
 ${utils_path}/error_handler ${retcode} msg="Unable to find litmus test runner pod, exiting" action="exit"
 
@@ -23,8 +23,8 @@ ${utils_path}/error_handler ${retcode} msg="Unable to find litmus test runner po
 ## that execution of auxiliary containers such as loggers is completed. Getting the ansibletest ccontainer to completed state 
 ## satisfies the "necessary" condition for test job completion
 
-containerStateCmd="kubectl get pod ${litmus_pod} -n litmus -o jsonpath='{.status.containerStatuses[?(@.name==\"ansibletest\")].state}'"
-jobStateCmd="kubectl get pod ${litmus_pod} --no-headers -n litmus -o custom-columns=:status.phase"
+containerStateCmd="kubectl get pod ${litmus_pod} -n litmus -o jsonpath='{.status.containerStatuses[?(@.name==\"ansibletest\")].state}' --kubeconfig=/root/.kube/config"
+jobStateCmd="kubectl get pod ${litmus_pod} --no-headers -n litmus -o custom-columns=:status.phase --kubeconfig=/root/.kube/config"
 
 ## TODO: Consider cases where litmus pod is evicted
 
@@ -56,4 +56,4 @@ echo "Litmus test run Job has completed"
 ${utils_path}/task_delimiter;
 
 echo "Dumping Litmus test pod logs for debug"; echo ""
-kubectl logs $litmus_pod -n litmus -c ansibletest
+kubectl logs $litmus_pod -n litmus -c ansibletest --kubeconfig=/root/.kube/config
