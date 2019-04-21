@@ -7,6 +7,6 @@ variables:
 pod-failure-job:
   image: ksatchit/ansible-runner:gitlab
   script:
-    - ./simple_pod_failure.bash --mode $mode --namespace $app_ns --label $app_label 
+    - /experiments/chaos/simple_pod_failure/simple_pod_failure.bash --mode $mode --namespace $app_ns --label $app_label 
   
   
