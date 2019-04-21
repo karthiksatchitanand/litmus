@@ -88,7 +88,7 @@ done
 ## GLOBAL_VARS        ##
 ########################
 
-utils_path="/home/karthik_satchitanand/example/litmus/common/utils/bash"
+utils_path="/common/utils/bash"
 
 #########################
 ## GENERATE TESTNAME   ##
