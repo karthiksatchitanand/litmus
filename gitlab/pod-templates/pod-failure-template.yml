@@ -6,7 +6,7 @@ variables:
   app_svc_account: default
 
 .pod_failure_template:
-  image: ksatchit/template-runner:ci
+  image: ksatchit/template-runner:t1
   script:
     - pwd
     - ls -ltr /
