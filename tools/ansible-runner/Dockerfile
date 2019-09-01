@@ -35,3 +35,4 @@ COPY ./executor/ansible/plugins/callback/timestamp.py /usr/local/lib/python2.7/d
 COPY ./hack/litmus-result.j2 ./
 COPY ./common/utils ./common/utils/
 COPY experiments ./experiments
+COPY gitlab ./gitlab
