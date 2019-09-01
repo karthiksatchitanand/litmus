@@ -6,7 +6,7 @@ variables:
   app_svc_account: default
 
 .pod_failure_template:
-  image: ksatchit/ansible-runner:trial8
+  image: ksatchit/template-runner:ci
   script:
     - sed -i 's|%APP_NS|$app_ns|g; s|%APP_LABEL|$app_label|g; s|%APP_KIND|$app_kind|g; s|%APP_SVC_ACC|$app_svc_account|g' chaosengine.yaml 
     - kubectl apply -f chaosengine.yaml
