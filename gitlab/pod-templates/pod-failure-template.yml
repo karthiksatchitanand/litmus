@@ -1,12 +1,13 @@
 ---
 variables:
   app_ns: percona
-  app_label: 'app=mysql'
-  mode: pod-delete
+  app_label: "app=percona"
+  app_kind: deployment
+  app_svc_account: default
 
 .pod_failure_template:
-  image: ksatchit/ansible-runner:gitlabgke
+  image: ksatchit/ansible-runner:trial8
   script:
-    - /experiments/chaos/simple_pod_failure/simple_pod_failure.bash --mode $mode --namespace $app_ns --label $app_label
-  
+    - sed -i 's|%APP_NS|$app_ns|g; s|%APP_LABEL|$app_label|g; s|%APP_KIND|$app_kind|g; s|%APP_SVC_ACC|$app_svc_account|g' chaosengine.yaml 
+    - kubectl apply -f chaosengine.yaml
   

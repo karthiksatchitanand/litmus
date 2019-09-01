@@ -1,0 +1,11 @@
+---
+variables:
+  app_ns: percona
+  app_label: 'app=mysql'
+
+.pod_failure_template:
+  image: ksatchit/ansible-runner:trial8
+  script:
+    - /experiments/chaos/simple_pod_failure/simple_pod_failure.bash --mode $mode --namespace $app_ns --label $app_label
+  
+  
