@@ -1,1 +1,130 @@
-<mxfile host="app.diagrams.net" modified="2020-06-24T03:50:18.054Z" agent="5.0 (Windows)" version="13.3.1" etag="w7apdHM5Z8hxbIomPmTv" type="github"><diagram id="prtHgNgQTEPvFCAcTncT" name="Page-1">7VjbctowEP0aHmF84ZZHIJDMtCQzIW2fhbXYamSJygJDv74rW45tTGkyTUo6w5Oto/Xe98h2y5/EuxtF1tFcUuAtz6G7ln/d8jzX83y8GGSfI8OBmwOhYtQKlcCC/QQLOhbdMApJTVBLyTVb18FACgGBrmFEKZnWxVaS162uSQgNYBEQ3kS/MaojG4U3KPFbYGFUWHb7V/lOTAphG0kSESrTCuRPW/5ESanzu3g3AW6SV+Qlf272m91nxxQI/ZIH6N1uf/dpEAyGy8/pNqEwv+21XatmS/jGRnyvwiAiSluv9b5IRZKymBOBq3GkY46gi7eJRllbN/QA96RiP6XQpJAIzIIJUI/7tZHSCoyOkJPEFMc804yl8AuUhl0FsrHdgIxBqz2K2N2uTXPRZ3aZlkUbFD0VVQrmXVmQ2EYJnzWXucQbm85s+SUBdb/8btrNczhZAs8fbXk9QWLAS8vrczQwXiq8C3UWYY6wWk77Pzam/JgiLlXLH2VjQPblRvl4by0TppkUFfXoFzs00DRJTMgKVjWLMWFcy8xkD8wiV3tgdprvPFsjpW6TsyzaLPTplqBjzpxxDspWs/A3E5jM7nOYy4CU8P1qxQLMmGPrnbuSbaHqrgM7Eq85dAIZW62cBBDhFIOqTzZn4ikHIq0NOYxM+bxZmqYdqkjaYTIXPD0PXqXJ7ABVRsAWe8zinDbqpgIq/A7Ddl8xgf7lTs8o0cQUCvEErxtsnjbZIqiSNvo+6xmbGZy0r9oeujDsrEWIVtKIaVisMWA0lSK/1idPyQ2aoXaEquNkJmwut8xoyUQNMMOklUhz4k7zw4vn0OvXB7HXHER3eGQQB6+fQ1xWRvE1rOc3WK/BdiDoyJwfuFpizz49Rgx7dozwjPGiBCukNst9rlkDxcPD6gC+lOm0BMYZgBsmlyww9HhQwlfWJJEbFcAfmxkPTKJCOKmxa6eP1g7DZo0VcBzebf1svDDnXzEnTYmihjulUiwxXjbZc6yIyGSIQOJRJ5nU+yBM2j0rk7pO238rKq0zZ4Nc341KD15p3CPvNEepdPgvqbR3odKaYP9Cpeei0kdIEmPnK3696WM0evuA0DVTmDR5mkSLA/HcJNo/K4n+9wx6+DL6MSl0cKHQmuDwQqHnotAH45dzLYXMPuibFLrYJxqQR5wRjZk4yaH+B+HQ4Vk59E0+6N/vFfPqrASJUPkDNBOv/Eb2p78A</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2020-06-24T07:52:14.156Z" agent="5.0 (Windows)" etag="CODsz0gBnV5axnQfTP_w" version="13.3.1" type="github">
+  <diagram id="prtHgNgQTEPvFCAcTncT" name="Page-1">
+    <mxGraphModel dx="782" dy="432" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <UserObject label="&lt;b&gt;LITMUSCHAOS&lt;/b&gt;&lt;br&gt;&lt;div&gt;&lt;i style=&quot;color: gray&quot;&gt;(meta repo)&lt;/i&gt;&lt;/div&gt;" name="Evan Miller" position="CFO" location="Office 1" placeholders="1" link="https://github.com/litmuschaos/litmus" id="aTb8c4d9_xj_SWtETMoj-1">
+          <mxCell style="whiteSpace=wrap;html=1;rounded=0;glass=0;treeMoving=1;treeFolding=1;fillColor=#FFE599;" vertex="1" parent="1">
+            <mxGeometry x="370" y="40" width="160" height="50" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="aTb8c4d9_xj_SWtETMoj-2" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="aTb8c4d9_xj_SWtETMoj-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="425" y="170" as="sourcePoint" />
+            <mxPoint x="450" y="180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aTb8c4d9_xj_SWtETMoj-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="aTb8c4d9_xj_SWtETMoj-4">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="170" y="340" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="170" y="330" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="ORCHESTRATION" location="Office 1" placeholders="1" id="aTb8c4d9_xj_SWtETMoj-4">
+          <mxCell style="whiteSpace=wrap;html=1;rounded=0;glass=0;treeMoving=1;treeFolding=1;fontStyle=1;fillColor=#D5E8D4;" vertex="1" parent="1">
+            <mxGeometry x="110" y="219" width="120" height="40" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="aTb8c4d9_xj_SWtETMoj-5" value="" style="endArrow=none;html=1;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="170" y="179" as="sourcePoint" />
+            <mxPoint x="730" y="179" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aTb8c4d9_xj_SWtETMoj-6" value="" style="endArrow=classic;html=1;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="169.5" y="179" as="sourcePoint" />
+            <mxPoint x="169.5" y="219" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aTb8c4d9_xj_SWtETMoj-7" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="309.5" y="179" as="sourcePoint" />
+            <mxPoint x="309.5" y="219" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="&lt;b&gt;MONITORING &lt;br&gt;&lt;/b&gt;" location="Office 1" placeholders="1" id="aTb8c4d9_xj_SWtETMoj-8">
+          <mxCell style="whiteSpace=wrap;html=1;rounded=0;glass=0;treeMoving=1;treeFolding=1;fillColor=#D5E8D4;" vertex="1" parent="1">
+            <mxGeometry x="250" y="219" width="120" height="40" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;EXPERIMENTS&lt;br&gt;&lt;/b&gt;" location="Office 1" placeholders="1" id="aTb8c4d9_xj_SWtETMoj-9">
+          <mxCell style="whiteSpace=wrap;html=1;rounded=0;glass=0;treeMoving=1;treeFolding=1;fillColor=#D5E8D4;" vertex="1" parent="1">
+            <mxGeometry x="390" y="219" width="120" height="40" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="aTb8c4d9_xj_SWtETMoj-10" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="309.5" y="179" as="sourcePoint" />
+            <mxPoint x="309.5" y="219" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aTb8c4d9_xj_SWtETMoj-11" value="" style="endArrow=classic;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" target="aTb8c4d9_xj_SWtETMoj-9">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="450" y="179" as="sourcePoint" />
+            <mxPoint x="530" y="239" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="&lt;div&gt;CHARTHUB&lt;/div&gt;" location="Office 1" placeholders="1" id="aTb8c4d9_xj_SWtETMoj-12">
+          <mxCell style="whiteSpace=wrap;html=1;rounded=0;glass=0;treeMoving=1;treeFolding=1;fontStyle=1;fillColor=#D5E8D4;" vertex="1" parent="1">
+            <mxGeometry x="530" y="219" width="120" height="40" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="aTb8c4d9_xj_SWtETMoj-13" value="" style="endArrow=classic;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" target="aTb8c4d9_xj_SWtETMoj-12">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="590" y="179" as="sourcePoint" />
+            <mxPoint x="530" y="239" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="590" y="199" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="&lt;b&gt;E2E&lt;br&gt;&lt;/b&gt;" location="Office 1" placeholders="1" id="aTb8c4d9_xj_SWtETMoj-14">
+          <mxCell style="whiteSpace=wrap;html=1;rounded=0;glass=0;treeMoving=1;treeFolding=1;fillColor=#D5E8D4;" vertex="1" parent="1">
+            <mxGeometry x="670" y="219" width="120" height="40" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="aTb8c4d9_xj_SWtETMoj-15" value="" style="endArrow=classic;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="590" y="179" as="sourcePoint" />
+            <mxPoint x="590" y="219" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="590" y="199" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aTb8c4d9_xj_SWtETMoj-16" value="" style="endArrow=classic;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" target="aTb8c4d9_xj_SWtETMoj-14">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="730" y="179" as="sourcePoint" />
+            <mxPoint x="530" y="239" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <object label="LITMUS-DOCS" link="https://github.com/litmuschaos/litmus-docs" id="aTb8c4d9_xj_SWtETMoj-17">
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE599;" vertex="1" parent="1">
+            <mxGeometry x="320" y="110" width="90" height="40" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="WEBSITE" link="https://github.com/litmuschaos/website-litmuschaos" id="aTb8c4d9_xj_SWtETMoj-18">
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE599;" vertex="1" parent="1">
+            <mxGeometry x="490" y="110" width="90" height="40" as="geometry" />
+          </mxCell>
+        </object>
+        <mxCell id="aTb8c4d9_xj_SWtETMoj-19" value="" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#FFE599;" vertex="1" parent="1">
+          <mxGeometry x="130" y="40" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="aTb8c4d9_xj_SWtETMoj-20" value="&lt;font style=&quot;font-size: 9px&quot;&gt;GITHUB REPO&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="160" y="40" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="aTb8c4d9_xj_SWtETMoj-21" value="" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#D5E8D4;" vertex="1" parent="1">
+          <mxGeometry x="130" y="70" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="aTb8c4d9_xj_SWtETMoj-22" value="&lt;font style=&quot;font-size: 9px&quot;&gt;CATEGORIES&lt;/font&gt;&amp;nbsp; " style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="160" y="70" width="80" height="20" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
